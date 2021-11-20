@@ -1,5 +1,4 @@
 public class CustomerRegisteration {
-    public void register(){
-        
+    public void register(User u){  
     }
 }
