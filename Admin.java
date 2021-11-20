@@ -1,5 +1,7 @@
+import java.util.ArrayList;
+
 public class Admin extends User{
-    private Driver[] pendingDrivers;
+    private ArrayList<Driver> pendingDrivers = new ArrayList<Driver>();
     private int PDcount;
 
     public void setPendingDriver(Driver d){
