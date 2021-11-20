@@ -1,5 +1,7 @@
+import java.util.ArrayList;
+
 public class Customer extends User{
-    private Offer[] offers;
+    private ArrayList<Offer> offers = new ArrayList<Offer>();
     private RideRequest rideRequest;
 
     Customer(){
@@ -12,7 +14,7 @@ public class Customer extends User{
 
     }
     public void request(String src, String dst){
-
+        rideRequest.publishRequest(this, src, dst);
     }
     public void recieveOffer(Offer o){
 
