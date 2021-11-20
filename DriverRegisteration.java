@@ -5,7 +5,7 @@ public class DriverRegisteration implements Registeration{
     public void addAdmin(Admin a){
 
     }
-    public void register(){
+    public void register(User u){
         
     }
 }
