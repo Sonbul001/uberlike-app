@@ -1,25 +1,20 @@
 public abstract class User{
-    private String userName;
-    private String email;
-    private String password;
-    private int mobileNo;
-    private Registeration registeration;
-    private boolean isRegistered;
+    protected String userName;
+    protected String email;
+    protected String password;
+    protected String mobileNo;
+    protected boolean isRegistered = false;
 
     User(){
         userName = "";
         email = "";
         password = "";
-        mobileNo = 0;
-        registeration = null;
+        mobileNo = "";
         isRegistered = false;
     }
-    public abstract void register();
     public void setRegisterStatus(boolean status){
         isRegistered = status;
     }
-    public boolean login(String id, String pwd){
-        userName = id;
-        password = pwd;
-    }
+    public abstract void register();
+    public abstract boolean login();
 }
