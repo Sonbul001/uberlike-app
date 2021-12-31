@@ -2,14 +2,18 @@ public class AdminController {
     private AdminModel model;
     private AdminView view;
     private Admin admin;
-//    private DriverModel pendingDrivers;
+    private DriverModel pendingDrivers;
     
     public AdminController(Admin admin, AdminModel model){
         this.admin = admin;
         this.model = model;
+        pendingDrivers = new DriverModel();
     }
     public void setView(AdminView view){
         this.view = view;
+    }
+    public void setAdmin(Admin admin){
+        this.admin = admin;
     }
     public void register(Admin admin){
         model.insert(admin);
@@ -25,15 +29,15 @@ public class AdminController {
         }
     }
     public void listPendingDrivers(){
-        //String message = pendingDrivers.getAllDrivers();
-        view.print("Drivers ...");
+        String message = pendingDrivers.getPendingDrivers();
+        view.print(message);
     }
     public void approveDriver(String driverUserName){
-        //pendingDrivers.insert("UPDATE Drivers SET isRegistered = true where userName='" + driverUserName +"'");
+        pendingDrivers.insert("UPDATE Drivers SET isRegistered = true where driverID='" + driverUserName +"'");
         view.print(driverUserName + " is approved successfully ");
     }
     public void denyDriver(String driverUserName){
-        //pendingDrivers.remove(driverUserName);
+        pendingDrivers.remove(driverUserName);
         view.print(driverUserName + " is denied successfully");
     }
 }
