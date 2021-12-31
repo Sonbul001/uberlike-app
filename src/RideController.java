@@ -5,8 +5,11 @@ public class RideController {
     public RideController(Ride ride){
         this.ride = ride;
     }
-    public void calcDistance(){
-        
+    public String startRide(){
+        return calcDistance();
+    }
+    public String calcDistance(){
+        return "Distance calculated";
     }
     public void endRide(){
         ride.completed();
